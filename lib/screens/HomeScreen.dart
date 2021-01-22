@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/rendering.dart';
+import 'package:fooddeliveryapp/screens/Profile_Screen.dart';
 import 'package:fooddeliveryapp/screens/offers_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -14,7 +15,7 @@ class _HomeScreenState extends State<HomeScreen> {
   List<Widget>_items=[
     Center(child:Container(height: 300,width: 300,color: Colors.deepOrange,)),
     OffersScreen(),
-    Center(child:Container(height: 300,width: 300,color: Colors.blueAccent,)),
+    ProfileScreen(),
   ];
 
   @override
