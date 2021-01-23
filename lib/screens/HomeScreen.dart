@@ -27,7 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             CurvedNavigationBar(
               height: 45,
-              backgroundColor: Colors.transparent,
+              backgroundColor: Colors.black87,
               buttonBackgroundColor: Colors.deepOrange,
               color: Colors.black,
               items: <Widget>[
