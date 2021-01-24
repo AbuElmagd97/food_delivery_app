@@ -4,6 +4,7 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/rendering.dart';
 import 'package:fooddeliveryapp/constants.dart';
 import 'package:fooddeliveryapp/screens/Profile_Screen.dart';
+import 'package:fooddeliveryapp/screens/Settings_Screen.dart';
 import 'package:fooddeliveryapp/screens/offers_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -40,77 +41,92 @@ class _HomeScreenState extends State<HomeScreen> {
                   onPressed: () {
                     print("Settings");
                   },
-                  icon: Icon(
-                    Icons.settings,
-                    color: Colors.white,
+                  icon: IconButton(
+                    icon: Icon(Icons.settings,
+                      color: Colors.white,),
+                    onPressed: (){
+                      Navigator.of(context).pushNamed(SettingScreen.RouteName);
+                    },
                   ),
                 ),
               ],
             )
           : _buildAppBar(),
-      bottomNavigationBar: Container(
-        height: 75,
-        child: Column(
-          children: [
-            CurvedNavigationBar(
-              height: 45,
-              backgroundColor: Colors.black87,
-              buttonBackgroundColor: Colors.deepOrange,
-              color: Colors.black,
-              items: <Widget>[
-                Icon(
-                  Icons.shopping_cart,
-                  size: 30,
-                  color: Colors.white,
-                ),
-                Icon(
-                  Icons.local_offer,
-                  size: 30,
-                  color: Colors.white,
-                ),
-                Icon(
-                  Icons.account_circle,
-                  size: 30,
-                  color: Colors.white,
-                ),
-              ],
-              onTap: (index) {
-                setState(() {
-                  _currentIndex = index;
-                });
-              },
-            ),
-            Container(
-              height: 30,
-              color: Colors.black,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Text(
-                    "Order",
-                    style: _currentIndex == 0
-                        ? TextStyle(color: Colors.deepOrange)
-                        : TextStyle(color: Colors.white),
-                  ),
-                  Text(
-                    "Offers",
-                    style: _currentIndex == 1
-                        ? TextStyle(color: Colors.deepOrange)
-                        : TextStyle(color: Colors.white),
-                  ),
-                  Text(
-                    "Profile",
-                    style: _currentIndex == 2
-                        ? TextStyle(color: Colors.deepOrange)
-                        : TextStyle(color: Colors.white),
-                  )
-                ],
-              ),
-            ),
-          ],
-        ),
+      body: Stack(
+        children: [
+          Container(
+            child: _items[_currentIndex],
+          ),
+          Align(
+              alignment: Alignment.bottomCenter,
+              child: Theme(
+                  data: Theme.of(context)
+                      .copyWith(canvasColor: Colors.transparent),
+                  child: Container(
+                    height: 75,
+                    child: Column(
+                      children: [
+                        CurvedNavigationBar(
+                          height: 45,
+                          backgroundColor: Colors.transparent,
+                          buttonBackgroundColor: Colors.deepOrange,
+                          color: Colors.black,
+                          items: <Widget>[
+                            Icon(
+                              Icons.shopping_cart,
+                              size: 30,
+                              color: Colors.white,
+                            ),
+                            Icon(
+                              Icons.local_offer,
+                              size: 30,
+                              color: Colors.white,
+                            ),
+                            Icon(
+                              Icons.account_circle,
+                              size: 30,
+                              color: Colors.white,
+                            ),
+                          ],
+                          onTap: (index) {
+                            setState(() {
+                              _currentIndex = index;
+                            });
+                          },
+                        ),
+                        Container(
+                          height: 30,
+                          color: Colors.black,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Text(
+                                "Order",
+                                style: _currentIndex == 0
+                                    ? TextStyle(color: Colors.deepOrange)
+                                    : TextStyle(color: Colors.white),
+                              ),
+                              Text(
+                                "Offers",
+                                style: _currentIndex == 1
+                                    ? TextStyle(color: Colors.deepOrange)
+                                    : TextStyle(color: Colors.white),
+                              ),
+                              Text(
+                                "Profile",
+                                style: _currentIndex == 2
+                                    ? TextStyle(color: Colors.deepOrange)
+                                    : TextStyle(color: Colors.white),
+                              )
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),)
+          ),
+        ],
       ),
-      body: _items[_currentIndex],
     );
   }
 
@@ -180,7 +196,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       style: style2.copyWith(fontWeight: FontWeight.bold),
                     ),
                     SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.45,
+                      width: MediaQuery.of(context).size.width * 0.4,
                     ),
                     IconButton(
                       onPressed: () {
@@ -208,7 +224,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         style: style2.copyWith(fontWeight: FontWeight.bold),
                       ),
                       SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.37,
+                        width: MediaQuery.of(context).size.width * 0.3,
                       ),
                       Icon(
                         Icons.keyboard_arrow_right,
