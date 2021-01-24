@@ -326,7 +326,7 @@ class OffersScreen extends StatelessWidget {
                             style: style3.copyWith(fontWeight: FontWeight.bold),
                           ),
                           SizedBox(
-                            width: MediaQuery.of(context).size.width*0.06,
+                            width: width*0.06,
                           ),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.end,
