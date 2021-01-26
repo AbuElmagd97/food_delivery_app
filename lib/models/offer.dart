@@ -7,6 +7,7 @@ class Offer {
   String regularPrice;
   String salePrice;
   String img;
+  String description;
   Restaurant restaurant;
 
   Offer(
@@ -16,5 +17,6 @@ class Offer {
       this.regularPrice,
       this.salePrice,
       this.img,
+      this.description,
       this.restaurant});
 }

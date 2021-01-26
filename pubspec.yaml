@@ -31,6 +31,7 @@ dependencies:
   social_media_buttons: ^0.1.2
   sign_button: ^1.0.1
   cupertino_icons: ^1.0.0
+  flutter_reaction_button: ^1.0.7+2
 
 dev_dependencies:
   flutter_test:
@@ -51,6 +52,14 @@ flutter:
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
+
+  assets:
+    - images/angry.gif
+    - images/haha.gif
+    - images/like.gif
+    - images/love.gif
+    - images/sad.gif
+    - images/wow.gif
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

@@ -6,6 +6,7 @@ import 'package:fooddeliveryapp/constants.dart';
 import 'package:fooddeliveryapp/screens/Profile_Screen.dart';
 import 'package:fooddeliveryapp/screens/Settings_Screen.dart';
 import 'package:fooddeliveryapp/screens/offers_screen.dart';
+import 'package:fooddeliveryapp/screens/order_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -16,12 +17,8 @@ class _HomeScreenState extends State<HomeScreen> {
   int _currentIndex = 0;
 
   List<Widget> _items = [
-    Center(
-        child: Container(
-      height: 300,
-      width: 300,
-      color: Colors.deepOrange,
-    )),
+    //TODO: Order page
+    OrderScreen(),
     OffersScreen(),
     ProfileScreen(),
   ];
@@ -224,7 +221,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         style: style2.copyWith(fontWeight: FontWeight.bold),
                       ),
                       SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.3,
+                        width: MediaQuery.of(context).size.width * 0.33,
                       ),
                       Icon(
                         Icons.keyboard_arrow_right,
