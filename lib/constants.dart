@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
+const String apiKey = "AIzaSyDpcItqxXaKyiSHZQLcUSEPaEvLEgfBux4";
+
 const Color textColor1 = Color(0xffFFFFFF);
 const Color textColor2 = Color(0xffff8c00);
 
