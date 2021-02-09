@@ -2,6 +2,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:fooddeliveryapp/models/offer.dart';
 import 'package:fooddeliveryapp/models/restaurant.dart';
+import 'package:fooddeliveryapp/screens/order_detail_screen.dart';
 import 'package:fooddeliveryapp/widgets/social_box.dart';
 import '../constants.dart';
 
@@ -28,7 +29,8 @@ class OrderScreen extends StatelessWidget {
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(5.0),
-                              border: Border.all(color: Colors.grey, width: 0.5)),
+                              border:
+                                  Border.all(color: Colors.grey, width: 0.5)),
                           width: 18,
                           height: 18,
                           child: Icon(
@@ -111,12 +113,12 @@ class OrderScreen extends StatelessWidget {
         restaurant: Restaurant(
             name: "Chicken Chister - Sidi Gaber",
             img:
-            "https://scontent-hbe1-1.xx.fbcdn.net/v/t1.0-9/p960x960/58032965_829072737443434_1361760720257024000_o.jpg?_nc_cat=106&ccb=2&_nc_sid=85a577&_nc_ohc=OqLCVCM6B48AX9f1Bnv&_nc_ht=scontent-hbe1-1.xx&tp=6&oh=372e89d3e825fd86d7b097bd9fac96b9&oe=6033AD42"),
+                "https://scontent-hbe1-1.xx.fbcdn.net/v/t1.0-9/p960x960/58032965_829072737443434_1361760720257024000_o.jpg?_nc_cat=106&ccb=2&_nc_sid=85a577&_nc_ohc=OqLCVCM6B48AX9f1Bnv&_nc_ht=scontent-hbe1-1.xx&tp=6&oh=372e89d3e825fd86d7b097bd9fac96b9&oe=6033AD42"),
         img:
-        "https://scontent-hbe1-1.xx.fbcdn.net/v/t1.0-9/s960x960/82743955_1027093370974702_6366493558312009728_o.png?_nc_cat=108&ccb=2&_nc_sid=dd9801&_nc_ohc=lv2SwE9NBCUAX9Rb5jL&_nc_ht=scontent-hbe1-1.xx&_nc_tp=30&oh=1dbe90d8827f6c5a80b596e41828e763&oe=60347372",
+            "https://scontent-hbe1-1.xx.fbcdn.net/v/t1.0-9/s960x960/82743955_1027093370974702_6366493558312009728_o.png?_nc_cat=108&ccb=2&_nc_sid=dd9801&_nc_ohc=lv2SwE9NBCUAX9Rb5jL&_nc_ht=scontent-hbe1-1.xx&_nc_tp=30&oh=1dbe90d8827f6c5a80b596e41828e763&oe=60347372",
         name: "25 % off!",
         description:
-        "Get your meal now (Crispy Melt Sandwich + Classic Sandwich + Crispy Ranchi Sandwich + Cheesy Beef Mushroom + 2Fries Box + 1 Liter Pepsi)",
+            "Get your meal now (Crispy Melt Sandwich + Classic Sandwich + Crispy Ranchi Sandwich + Cheesy Beef Mushroom + 2Fries Box + 1 Liter Pepsi)",
         discount: "25% Discount",
         duration: "Valid till 31 Jan 2021",
         salePrice: "180 EGP",
@@ -139,12 +141,12 @@ class OrderScreen extends StatelessWidget {
         restaurant: Restaurant(
             name: "Chicken Chister - Sidi Gaber",
             img:
-            "https://scontent-hbe1-1.xx.fbcdn.net/v/t1.0-9/p960x960/58032965_829072737443434_1361760720257024000_o.jpg?_nc_cat=106&ccb=2&_nc_sid=85a577&_nc_ohc=OqLCVCM6B48AX9f1Bnv&_nc_ht=scontent-hbe1-1.xx&tp=6&oh=372e89d3e825fd86d7b097bd9fac96b9&oe=6033AD42"),
+                "https://scontent-hbe1-1.xx.fbcdn.net/v/t1.0-9/p960x960/58032965_829072737443434_1361760720257024000_o.jpg?_nc_cat=106&ccb=2&_nc_sid=85a577&_nc_ohc=OqLCVCM6B48AX9f1Bnv&_nc_ht=scontent-hbe1-1.xx&tp=6&oh=372e89d3e825fd86d7b097bd9fac96b9&oe=6033AD42"),
         img:
-        "https://scontent-hbe1-1.xx.fbcdn.net/v/t1.0-9/p960x960/134423430_1317256265291743_583119239967700407_o.jpg?_nc_cat=103&ccb=2&_nc_sid=8024bb&_nc_ohc=wDMqN_-bkngAX-dOIIL&_nc_ht=scontent-hbe1-1.xx&tp=6&oh=edb5c8334eb085bd1310a520cb1202a6&oe=6036F664",
+            "https://scontent-hbe1-1.xx.fbcdn.net/v/t1.0-9/p960x960/134423430_1317256265291743_583119239967700407_o.jpg?_nc_cat=103&ccb=2&_nc_sid=8024bb&_nc_ohc=wDMqN_-bkngAX-dOIIL&_nc_ht=scontent-hbe1-1.xx&tp=6&oh=edb5c8334eb085bd1310a520cb1202a6&oe=6036F664",
         name: "25 % off!",
         description:
-        "Get your meal now (Crispy Melt Sandwich + Classic Sandwich + Crispy Ranchi Sandwich + Cheesy Beef Mushroom + 2Fries Box + 1 Liter Pepsi)",
+            "Get your meal now (Crispy Melt Sandwich + Classic Sandwich + Crispy Ranchi Sandwich + Cheesy Beef Mushroom + 2Fries Box + 1 Liter Pepsi)",
         discount: "25% Discount",
         duration: "Valid till 31 Jan 2021",
         salePrice: "180 EGP",
@@ -176,12 +178,18 @@ class OrderScreen extends StatelessWidget {
                           style: style1.copyWith(fontSize: 18.0),
                         ),
                       ),
-                      Container(
-                        width: width,
-                        height: height * 0.25,
-                        child: FittedBox(
-                            fit: BoxFit.fill,
-                            child: Image.network(mainOffer[index].img)),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(
+                              context, OrderDetailScreen.RouteName);
+                        },
+                        child: Container(
+                          width: width,
+                          height: height * 0.25,
+                          child: FittedBox(
+                              fit: BoxFit.fill,
+                              child: Image.network(mainOffer[index].img)),
+                        ),
                       ),
                       SizedBox(
                         height: 10,
