@@ -15,41 +15,37 @@ class OfferOrder extends StatelessWidget {
       restaurant: Restaurant(
           name: "Chicken Chister - Sidi Gaber",
           img:
-          "https://scontent-hbe1-1.xx.fbcdn.net/v/t1.0-9/p960x960/58032965_829072737443434_1361760720257024000_o.jpg?_nc_cat=106&ccb=2&_nc_sid=85a577&_nc_ohc=OqLCVCM6B48AX9f1Bnv&_nc_ht=scontent-hbe1-1.xx&tp=6&oh=372e89d3e825fd86d7b097bd9fac96b9&oe=6033AD42"),
+              "https://scontent-hbe1-1.xx.fbcdn.net/v/t1.0-9/p960x960/58032965_829072737443434_1361760720257024000_o.jpg?_nc_cat=106&ccb=2&_nc_sid=85a577&_nc_ohc=OqLCVCM6B48AX9f1Bnv&_nc_ht=scontent-hbe1-1.xx&tp=6&oh=372e89d3e825fd86d7b097bd9fac96b9&oe=6033AD42"),
       img:
-      "https://scontent-hbe1-1.xx.fbcdn.net/v/t1.0-9/s960x960/82743955_1027093370974702_6366493558312009728_o.png?_nc_cat=108&ccb=2&_nc_sid=dd9801&_nc_ohc=lv2SwE9NBCUAX9Rb5jL&_nc_ht=scontent-hbe1-1.xx&_nc_tp=30&oh=1dbe90d8827f6c5a80b596e41828e763&oe=60347372",
+          "https://scontent-hbe1-1.xx.fbcdn.net/v/t1.0-9/s960x960/82743955_1027093370974702_6366493558312009728_o.png?_nc_cat=108&ccb=2&_nc_sid=dd9801&_nc_ohc=lv2SwE9NBCUAX9Rb5jL&_nc_ht=scontent-hbe1-1.xx&_nc_tp=30&oh=1dbe90d8827f6c5a80b596e41828e763&oe=60347372",
       name: "25 % off!",
       description:
-      "Get your meal now (Crispy Melt Sandwich + Classic Sandwich + Crispy Ranchi Sandwich + Cheesy Beef Mushroom + 2Fries Box + 1 Liter Pepsi)",
+          "Get your meal now (Crispy Melt Sandwich + Classic Sandwich + Crispy Ranchi Sandwich + Cheesy Beef Mushroom + 2Fries Box + 1 Liter Pepsi)",
       discount: "25% Discount",
       duration: "Valid till 31 Jan 2021",
       regularPrice: "180 EGP",
       salePrice: "125 EGP",
     );
     return Padding(
-      padding: const EdgeInsets.symmetric(
-          horizontal: 15.0, vertical: 10.0),
+      padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Row(
-            mainAxisAlignment:
-            MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
                 offer.name,
                 style: style1.copyWith(fontWeight: FontWeight.bold),
               ),
               Column(
-                crossAxisAlignment:
-                CrossAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Text(
                     offer.regularPrice,
                     style: style3.copyWith(
                         color: Colors.white70,
-                        decoration:
-                        TextDecoration.lineThrough),
+                        decoration: TextDecoration.lineThrough),
                   ),
                   Text(
                     offer.salePrice,
@@ -67,13 +63,11 @@ class OfferOrder extends StatelessWidget {
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
                   color: Colors.deepOrange,
-                  borderRadius:
-                  BorderRadius.circular(5.0),
+                  borderRadius: BorderRadius.circular(5.0),
                 ),
                 child: Text(
                   offer.discount,
-                  style: style2.copyWith(
-                      fontWeight: FontWeight.bold),
+                  style: style2.copyWith(fontWeight: FontWeight.bold),
                 ),
               ),
               SizedBox(
@@ -81,15 +75,13 @@ class OfferOrder extends StatelessWidget {
               ),
               Text(
                 offer.duration,
-                style: style3.copyWith(
-                    fontWeight: FontWeight.bold),
+                style: style3.copyWith(fontWeight: FontWeight.bold),
               ),
             ],
           ),
           SocialStatusBox(),
           Row(
-            mainAxisAlignment:
-            MainAxisAlignment.spaceAround,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               CommentButton(width: width),
               ShareButton(width: width),
@@ -105,14 +97,14 @@ class OfferOrder extends StatelessWidget {
               Text(
                 'OFFER DESCRIPTION',
                 style: style3.copyWith(
-                    color: Colors.white70,
-                    fontWeight: FontWeight.bold),
+                    color: Colors.white70, fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
               Text(
                 offer.description,
-                style: style3.copyWith(
-                    color: Colors.white70),
+                style: style3.copyWith(color: Colors.white70),
               ),
             ],
           ),
@@ -125,13 +117,11 @@ class OfferOrder extends StatelessWidget {
             children: [
               Text(
                 "PLACE INFO",
-                style: style3.copyWith(
-                    color: Colors.white70),
+                style: style3.copyWith(color: Colors.white70),
               ),
               ListTile(
                 leading: CircleAvatar(
-                  backgroundImage:
-                  NetworkImage(offer.restaurant.img),
+                  backgroundImage: NetworkImage(offer.restaurant.img),
                 ),
                 title: Text(
                   offer.restaurant.name,

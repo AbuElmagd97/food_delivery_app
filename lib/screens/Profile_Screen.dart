@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fooddeliveryapp/services/auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -154,7 +153,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     style: TextStyle(color: Colors.green),
                   )
                 ],
-              )
+              ),
             ],
           ),
         ),

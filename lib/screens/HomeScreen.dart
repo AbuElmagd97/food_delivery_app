@@ -18,7 +18,6 @@ class _HomeScreenState extends State<HomeScreen> {
   int _currentIndex = 0;
 
   List<Widget> _items = [
-    //TODO: Order page
     OrderScreen(),
     OffersScreen(),
     ProfileScreen(),
