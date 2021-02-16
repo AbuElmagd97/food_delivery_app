@@ -118,7 +118,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     buttonType: ButtonType.google,
                     buttonSize: ButtonSize.large,
                     onPressed: () async{
-                      await signInwithGoogle();
+                      await signInWithGoogle();
                       print(_currentUser);
                     }),
               ),

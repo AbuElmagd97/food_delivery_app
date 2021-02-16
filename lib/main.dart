@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fooddeliveryapp/screens/HomeScreen.dart';
 import 'package:fooddeliveryapp/screens/Settings_Screen.dart';
+import 'package:fooddeliveryapp/screens/cart_screen.dart';
 import 'package:fooddeliveryapp/screens/map_screen.dart';
 import 'package:fooddeliveryapp/screens/order_detail_screen.dart';
 
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
         SettingScreen.RouteName:(ctx)=>SettingScreen(),
         MapScreen.RouteName:(ctx) => MapScreen(),
         OrderDetailScreen.RouteName:(ctx) => OrderDetailScreen(),
+        CartScreen.RouteName:(ctx) => CartScreen(),
      },
     );
   }

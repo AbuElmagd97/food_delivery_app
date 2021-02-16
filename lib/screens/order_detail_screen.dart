@@ -5,6 +5,7 @@ import 'package:fooddeliveryapp/models/restaurant.dart';
 import 'package:fooddeliveryapp/widgets/offer_order.dart';
 import 'dart:math' as math;
 import '../constants.dart';
+import 'cart_screen.dart';
 
 class OrderDetailScreen extends StatelessWidget {
   static const RouteName = "/OrderDetailScreen";
@@ -325,7 +326,9 @@ class OrderDetailScreen extends StatelessWidget {
                 height: height * 0.1,
                 color: Colors.black,
                 child: RaisedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, CartScreen.RouteName);
+                  },
                   color: Colors.deepOrange,
                   child: Text("ORDER"),
                   textColor: Colors.white,

@@ -6,7 +6,20 @@ import 'package:fooddeliveryapp/screens/order_detail_screen.dart';
 import 'package:fooddeliveryapp/widgets/social_box.dart';
 import '../constants.dart';
 
-class OrderScreen extends StatelessWidget {
+class OrderScreen extends StatefulWidget {
+  @override
+  _OrderScreenState createState() => _OrderScreenState();
+}
+
+class _OrderScreenState extends State<OrderScreen> {
+  int _selectedIndex;
+
+  void _priceSelected(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -81,23 +94,32 @@ class OrderScreen extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemCount: prices.length,
         itemBuilder: (context, index) {
-          return Container(
-            margin: EdgeInsets.symmetric(horizontal: 3.0),
-            alignment: Alignment.center,
-            width: 60,
-            height: 30,
-            decoration: BoxDecoration(
-              shape: BoxShape.rectangle,
-              border: Border.all(
-                color: Colors.grey,
-                width: 0.3,
+          return GestureDetector(
+            onTap: () => _priceSelected(index),
+            child: Container(
+              margin: EdgeInsets.symmetric(horizontal: 3.0),
+              alignment: Alignment.center,
+              width: 60,
+              height: 30,
+              decoration: BoxDecoration(
+                color: _selectedIndex != null && _selectedIndex == index
+                    ? Colors.deepOrange
+                    : null,
+                shape: BoxShape.rectangle,
+                border: Border.all(
+                  color: Colors.grey,
+                  width: 0.3,
+                ),
+                borderRadius: BorderRadius.circular(4.0),
               ),
-              borderRadius: BorderRadius.circular(4.0),
-            ),
-            child: Text(
-              prices[index].salePrice,
-              style: style2.copyWith(
-                  color: Colors.white70, fontWeight: FontWeight.bold),
+              child: Text(
+                prices[index].salePrice,
+                style: style2.copyWith(
+                    color: _selectedIndex != null && _selectedIndex == index
+                        ? Colors.white
+                        : Colors.white70,
+                    fontWeight: FontWeight.bold),
+              ),
             ),
           );
         },
