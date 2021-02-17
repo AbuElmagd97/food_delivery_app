@@ -96,29 +96,31 @@ class _OrderScreenState extends State<OrderScreen> {
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () => _priceSelected(index),
-            child: Container(
-              margin: EdgeInsets.symmetric(horizontal: 3.0),
-              alignment: Alignment.center,
-              width: 60,
-              height: 30,
-              decoration: BoxDecoration(
-                color: _selectedIndex != null && _selectedIndex == index
-                    ? Colors.deepOrange
-                    : null,
-                shape: BoxShape.rectangle,
-                border: Border.all(
-                  color: Colors.grey,
-                  width: 0.3,
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 4),
+              child: Container(
+                alignment: Alignment.center,
+                width: 60,
+                height: 25,
+                decoration: BoxDecoration(
+                  color: _selectedIndex != null && _selectedIndex == index
+                      ? Colors.deepOrange
+                      : null,
+                  shape: BoxShape.rectangle,
+                  border: Border.all(
+                    color: Colors.grey,
+                    width: 1,
+                  ),
+                  borderRadius: BorderRadius.circular(4.0),
                 ),
-                borderRadius: BorderRadius.circular(4.0),
-              ),
-              child: Text(
-                prices[index].salePrice,
-                style: style2.copyWith(
-                    color: _selectedIndex != null && _selectedIndex == index
-                        ? Colors.white
-                        : Colors.white70,
-                    fontWeight: FontWeight.bold),
+                child: Text(
+                  prices[index].salePrice,
+                  style: style2.copyWith(
+                      color: _selectedIndex != null && _selectedIndex == index
+                          ? Colors.white
+                          : Colors.white70,
+                      fontWeight: FontWeight.bold),
+                ),
               ),
             ),
           );

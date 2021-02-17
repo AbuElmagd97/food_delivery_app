@@ -130,7 +130,7 @@ class _HomeScreenState extends State<HomeScreen> {
       actions: [
         GestureDetector(
           onTap: () {
-            _showBottomSheet(context);
+            _locationBottomSheet(context);
           },
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 10.0),
@@ -153,7 +153,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  void _showBottomSheet(BuildContext context) {
+  void _locationBottomSheet(BuildContext context) {
     showModalBottomSheet(
         context: context,
         backgroundColor: Colors.black,

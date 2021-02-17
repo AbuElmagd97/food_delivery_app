@@ -4,10 +4,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fooddeliveryapp/models/offer.dart';
 import 'package:fooddeliveryapp/models/restaurant.dart';
+import 'package:fooddeliveryapp/widgets/filter_button.dart';
 
 import '../constants.dart';
 
-class OffersScreen extends StatelessWidget {
+class OffersScreen extends StatefulWidget {
+  @override
+  _OffersScreenState createState() => _OffersScreenState();
+}
+
+class _OffersScreenState extends State<OffersScreen> {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -31,25 +37,17 @@ class OffersScreen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("Offers",style: style1.copyWith(fontWeight: FontWeight.bold),),
-                    Container(
-                        width: 75,
-                        height: 30,
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Colors.grey,width: 0.5),
-                          color: Colors.transparent,
-                          borderRadius: BorderRadius.circular(5.0),
-                        ),
-                        child: Row(
-                          children: [
-                            Icon(Icons.filter_list_outlined,color: Colors.white,),
-                            Text("FILTER",style: style2,),
-                          ],
-                        )),
+                    Text(
+                      "Offers",
+                      style: style1.copyWith(fontWeight: FontWeight.bold),
+                    ),
+                    FilterButton(),
                   ],
                 ),
-                Divider(color: Colors.black,height: 30,),
+                Divider(
+                  color: Colors.black,
+                  height: 30,
+                ),
                 _offers(context),
               ],
             ),
@@ -142,7 +140,8 @@ class OffersScreen extends StatelessWidget {
   Widget _offers(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
-    List<Offer> offers = [  /// for test only
+    List<Offer> offers = [
+      /// for test only
       Offer(
           name: "Happiness Offer",
           img:
@@ -263,7 +262,9 @@ class OffersScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-                        SizedBox(height: 5,),
+                        SizedBox(
+                          height: 5,
+                        ),
                         Row(
                           children: [
                             Text(
@@ -275,7 +276,9 @@ class OffersScreen extends StatelessWidget {
                               color: Colors.white,
                               size: 18,
                             ),
-                            SizedBox(width: 10,),
+                            SizedBox(
+                              width: 10,
+                            ),
                             Text(
                               '1',
                               style: style2,
@@ -326,7 +329,7 @@ class OffersScreen extends StatelessWidget {
                             style: style3.copyWith(fontWeight: FontWeight.bold),
                           ),
                           SizedBox(
-                            width: width*0.06,
+                            width: width * 0.06,
                           ),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.end,

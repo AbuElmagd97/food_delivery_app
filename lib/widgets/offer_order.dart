@@ -127,24 +127,24 @@ class OfferOrder extends StatelessWidget {
                   offer.restaurant.name,
                   style: style1.copyWith(fontSize: 18.0),
                 ),
-                trailing: IconButton(
-                    icon: Icon(
+                trailing: GestureDetector(
+                    child: Icon(
                       Icons.keyboard_arrow_right,
                       color: Colors.deepOrange,
                     ),
-                    onPressed: () {}),
+                    onTap: () {}),
               ),
               ListTile(
                 title: Text(
                   "VIEW ALL COMMENT",
                   style: style2.copyWith(color: Colors.deepOrange),
                 ),
-                trailing: IconButton(
-                    icon: Icon(
+                trailing: GestureDetector(
+                    child: Icon(
                       Icons.keyboard_arrow_right,
                       color: Colors.deepOrange,
                     ),
-                    onPressed: () {}),
+                    onTap: () {}),
               ),
             ],
           ),
